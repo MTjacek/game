@@ -3,3 +3,8 @@ starting abilities for
 trust abilities:
     alliance: ends the fight if trust and respect add up to 150 or more
     passivity: (requires, unattached sigil), grants a 10 damage physical shield and increases trust by 15
+    martyr: take 5 damage and increase trust by 20 (subject to debate?)
+    backstab: converts a portion of trust in damage
+
+respect abilities:
+    fair fight: 
