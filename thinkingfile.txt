@@ -1,0 +1,5 @@
+starting abilities for
+
+trust abilities:
+    alliance: ends the fight if trust and respect add up to 150 or more
+    passivity: (requires, unattached sigil), grants a 10 damage physical shield and increases trust by 15
