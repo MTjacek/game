@@ -129,6 +129,8 @@ def skill(ecode):
         if (int(list[17]) > 0):
             print("shock")
             change_variable(18, (int(list[17]) - 1))
+            #pain(8)
+            change_variable(13, (int(list[12]) + 8))
             DSTF(10, "magic")
         else:
             print("no sigil attached")
@@ -142,6 +144,31 @@ def skill(ecode):
         #switch turn without DSTF
         change_variable(2, 0)
         basic_loop(ecode)     
+    elif (skill == '103') and (skill in list[5]):
+        clear_terminal()
+        print(get_random_element("to live another day", "shell!", "strategic withholding"))
+        input("")
+        clear_terminal()
+        change_variable(11, 5)
+        change_variable(12, 5)
+        #switch turn without DSTF
+        change_variable(2, 0)
+        basic_loop(ecode)    
+    elif (skill == '116') and (skill in list[5]):
+        if (int(list[17]) > 0):
+            clear_terminal()
+            print(get_random_element("be afraid", "hexing spiral!"))
+            input("")
+            clear_terminal()
+            change_variable(18, (int(list[17]) - 1))
+            #pain(18)
+            change_variable(13, (int(list[12]) + 18))
+            #switch turn without DSTF
+            change_variable(2, 0)
+            basic_loop(ecode)    
+        else:
+            print("no sigil attached")
+            basic_loop(ecode)
     else:
         #no skill selected
         basic_loop(ecode)
@@ -150,34 +177,72 @@ def enemy(ecode):
     if ecode == 301:
         #301 sets stats 
         print("Ose")
-        change_variable(8, 40)
+        #hp
+        change_variable(8, 100)
+        #fear
         change_variable(13, 10)
+        #interest
         change_variable(14, 100)
+        #relative strength
         change_variable(15, 1)
+        #respect
         change_variable(16, 0)
+        #second enemy code 
         change_variable(17, 302)
         print("the fictional being begins its offensive")
         if get_random_element("desperate flail", "discharge") == "desperate flail":
             #desperate flail
             print("it swings its claws around disorderly")
-            DSTF(5, "physical")
+            DSTF(8, "physical")
         else:
             #discharge
             print("electricity collects around it")
-            DSTF(5, "magic")
+            DSTF(9, "magic")
     elif ecode == 302:
-        #302 is in fight
-        print("Relentless!")
-        if get_random_element("desperate flail", "discharge") == "desperate flail":
-            #desperate flail
-            print("it swings its claws around disorderly")
-            DSTF(5, "physical")
+        if deathcheck() == 1:
+            print("the fight is over")
         else:
-            #discharge
-            print("electricity collects around it")
-            DSTF(5, "magic")
+            #302 is in fight
+            print("Relentless!")
+            if get_random_element("desperate flail", "discharge") == "desperate flail":
+                #desperate flail
+                print("it swings its claws around disorderly")
+                DSTF(5, "physical")
+            else:
+                #discharge
+                print("electricity collects around it")
+                DSTF(5, "magic")
     else:
         print("erm")
+
+def deathcheck():
+    
+    list = update()
+    if int(list[7]) < 1:
+        print("the beast has been slain")
+        return 1
+    #fear
+    if int(list[12]) > 40:
+        print(get_random_element("the enemy is hesitant", "visable fear", "its frightened"))
+
+def exploit(ecode):
+    clear_terminal()
+    print(get_random_element("the camera angle changes", "the music stops", "its show time"))
+    input("")
+    clear_terminal()
+    print("1. threaten")
+    print("2. borrow")
+    print("3. steal")
+    choice2 = input("whats the plan?: ")
+    if choice2 == '1':
+        print("threaten")
+    elif choice2 == '2':
+        print("borrow")
+    elif choice2 == '3':
+        print("steal")
+    else:
+        #bad choice 
+        basic_loop(ecode)
 
 def basic_loop(ecode):
     list = update()
@@ -191,7 +256,7 @@ def basic_loop(ecode):
         print("hp: " + list[3])
         print("1. Skills")
         print("2. Basic attack")
-        print("3. Talk")
+        print("3. exploit")
         print("4. leave")
         choice = get_player_choice()
         if choice == '1':
@@ -203,7 +268,7 @@ def basic_loop(ecode):
             # Implement defend logic here
 
         elif choice == '3':
-            print("You chose to use an item!")
+            exploit(ecode)
             # Implement use item logic here
 
         elif choice == '4':
