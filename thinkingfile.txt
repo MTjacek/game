@@ -1,10 +1,17 @@
 starting abilities for
 
 trust abilities:
-    alliance: ends the fight if trust and respect add up to 150 or more
-    passivity: (requires, unattached sigil), grants a 10 damage physical shield and increases trust by 15
-    martyr: take 5 damage and increase trust by 20 (subject to debate?)
-    backstab: converts a portion of trust in damage
+    111 alliance: ends the fight if trust and respect add up to 150 or more
+    112 passivity: (requires, unattached sigil), grants a 10 damage physical shield and increases trust by 15
+    113 martyr: take 5 damage and increase trust by 20 (subject to debate?)
+    114 backstab: converts a portion of trust in damage
 
 respect abilities:
-    fair fight: 
+   115 fair fight: does physical damage that scales with respect then, increases respect
+
+fear:
+    116 hexing spiral: (requires attached sigil), increases fear substantially
+    117: spook: (requires attached sigil), deals magic damage based off fear, then adds fear
+    118: greatest pain: (requires two attached sigils), increases fear substantially, prevents the enemy from running away, executes enemies below a certain health
+
+

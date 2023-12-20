@@ -112,10 +112,9 @@ def basicAttack():
     damage = (int(list[2]) * 2) + 5
     #attach tailsman
     if int(list[4]) > 0: 
-        if list[17] == "false":
-            print("sigil attached")
-            change_variable(5, (int(list[4]) - 1))
-            change_variable(18, "true")
+        print("sigil attached")
+        change_variable(5, (int(list[4]) - 1))
+        change_variable(18, (int(list[17]) + 1))
     else:
         print("no sigils")
     DSTF(damage, "physical")
@@ -127,13 +126,22 @@ def skill(ecode):
     skill = input("Enter skill code: ")
     #skill list
     if (skill == '101') and (skill in list[5]):
-        if (list[17] == "true"):
+        if (int(list[17]) > 0):
             print("shock")
-            change_variable(18, "false")
+            change_variable(18, (int(list[17]) - 1))
             DSTF(10, "magic")
         else:
             print("no sigil attached")
             basic_loop(ecode)
+    elif (skill == '102') and (skill in list[5]):
+        clear_terminal()
+        print(get_random_element("luck of the draw", "shuffle!", "exhilarating gamble"))
+        input("")
+        clear_terminal()
+        change_variable(5, (get_random_element(1, 2, 3)))
+        #switch turn without DSTF
+        change_variable(2, 0)
+        basic_loop(ecode)     
     else:
         #no skill selected
         basic_loop(ecode)
