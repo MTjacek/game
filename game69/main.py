@@ -248,6 +248,66 @@ def exploit(ecode):
         #bad choice 
         basic_loop(ecode)
 
+def map():
+    print("map")
+    list =update()
+    #print location
+    print("ring 1: " + list[20])
+    print("ring 2: " + list[21])
+    print("ring 3: " + list[22])
+    print("ring 4: " + list[23])
+    print("ring 5: " + list[24])
+    print("ring 6: " + list[25])
+    print("ring 7: " + list[26])
+    print("ring 8: " + list[27])
+    print("ring 9: " + list[28])
+    print("unlocked rings: " + list[29])
+
+def menu_loop():
+    print("menu")
+    list = update()
+    print("1. map")
+    print("2. skills")
+    print("3. status")
+    print("4. leave")
+    choice = input("whats the plan?: ")
+    if choice == '1':
+        map()
+        #unlocked_rings = list[29]
+        choice2 = input("what ring: ")
+        if (choice2 == '1') and (choice2 in list[29]):
+            print("ring 1")
+            #movemnet options
+        elif (choice2 == '2') and (choice2 in list[29]):
+            print("ring 2")
+        elif (choice2 == '3') and (choice2 in list[29]):
+            print("ring 3")
+        elif (choice2 == '4') and (choice2 in list[29]):
+            print("ring 4")
+        elif (choice2 == '5') and (choice2 in list[29]):
+            print("ring 5")
+        elif (choice2 == '6') and (choice2 in list[29]):
+            print("ring 6")
+        elif (choice2 == '7') and (choice2 in list[29]):
+            print("ring 7")
+        elif (choice2 == '8') and (choice2 in list[29]):
+            print("ring 8")
+        elif (choice2 == '9') and (choice2 in list[29]):
+            print("ring 9")
+        else:
+            #not valid
+            print("not valid")
+            menu_loop()
+    elif choice == '2':
+        #show skills with description
+        print("bazinga")
+    elif choice == '3':
+        #show health, level, and sigils
+        print("bazinga")
+    else:
+        #exit and save game
+        print("bazinga")
+
 def basic_loop(ecode):
     list = update()
     if list[1] == '1':
@@ -308,15 +368,11 @@ def main():
         clear_terminal()
 
     current = update()
+    menu_loop()
     #print(current)
-    if int(current[0]) == 0:
-        print("its time")
-        change_variable(1, 1)
-        current = update()
-    else:
-        change_variable(2, 1)
-        change_variable(17, 301)
-        basic_loop(301)
+    #change_variable(2, 1)
+    #change_variable(17, 301)
+    #basic_loop(301)
         
         
 

@@ -18,12 +18,13 @@
 17sigils attached: (1, 2, 3 .....)
 18enemy fund: (1, 2, 3 .. ....)
 19player fund: (1, 2, 3 .....)
-mapring1
-mapring2
-mapring3
-mapring4
-mapring5
-mapring6
-mapring7
-mapring8
-mapring9
+mapring1: (1, 2, 3 .....360)
+mapring2: (1, 2, 3 .....360)
+mapring3: (1, 2, 3 .....360)
+mapring4: (1, 2, 3 .....360)
+mapring5: (1, 2, 3 .....360)
+mapring6: (1, 2, 3 .....360)
+mapring7: (1, 2, 3 .....360)
+mapring8: (1, 2, 3 .....360)
+mapring9: (1, 2, 3 .....360)
+unlocked rings: (1, 2, 3, 4, 5, 6, 7, 8, 9)
