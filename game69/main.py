@@ -263,6 +263,24 @@ def map():
     print("ring 9: " + list[28])
     print("unlocked rings: " + list[29])
 
+def movement(number, events):
+    clear_terminal()
+    print(number)
+    print("type 'exit' to stop exploring")
+    bazinga = input("")
+    
+    if bazinga == 'exit':
+        return number
+    
+    number += 1
+    
+    if number in events:
+        print("!!")
+        print(number)
+        return number
+    
+    return movement(number, events)
+
 def menu_loop():
     print("menu")
     list = update()
@@ -277,7 +295,14 @@ def menu_loop():
         choice2 = input("what ring: ")
         if (choice2 == '1') and (choice2 in list[29]):
             print("ring 1")
-            #movemnet options
+            ring1events = [5, 29]
+            #print(movement(int(list[20]), ring1events))
+            change_variable(21, movement(int(list[20]), ring1events))
+            list = update()
+            if list[20] == '5':
+                print("it worked")
+                #ose event
+                basic_loop(301)
         elif (choice2 == '2') and (choice2 in list[29]):
             print("ring 2")
         elif (choice2 == '3') and (choice2 in list[29]):
@@ -367,6 +392,17 @@ def main():
         #increase stage variable 
         clear_terminal()
 
+    print("1. continue")
+    print("2. new game")
+    choice = input("new game?")
+    if choice == '1':
+        #no change
+        print("print")
+    elif choice == '2':
+        #base file stats 
+        print("new game")
+    else:
+        print("wrong")
     current = update()
     menu_loop()
     #print(current)
