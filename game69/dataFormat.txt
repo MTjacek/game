@@ -16,3 +16,14 @@
 15respect:(0-100)
 16ecode: (301, ....)
 17sigils attached: (1, 2, 3 .....)
+18enemy fund: (1, 2, 3 .. ....)
+19player fund: (1, 2, 3 .....)
+mapring1
+mapring2
+mapring3
+mapring4
+mapring5
+mapring6
+mapring7
+mapring8
+mapring9

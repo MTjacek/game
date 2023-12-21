@@ -207,11 +207,11 @@ def enemy(ecode):
             if get_random_element("desperate flail", "discharge") == "desperate flail":
                 #desperate flail
                 print("it swings its claws around disorderly")
-                DSTF(5, "physical")
+                DSTF(8, "physical")
             else:
                 #discharge
                 print("electricity collects around it")
-                DSTF(5, "magic")
+                DSTF(9, "magic")
     else:
         print("erm")
 
@@ -222,8 +222,12 @@ def deathcheck():
         print("the beast has been slain")
         return 1
     #fear
-    if int(list[12]) > 40:
-        print(get_random_element("the enemy is hesitant", "visable fear", "its frightened"))
+    if int(list[12]) >= 100:
+        #run away logic
+        print(get_random_element("the enemy runs away", "the creature backs off in fear", "the enemy leaves frightened"))
+        return 1
+    elif int(list[12]) > 40:
+         print(get_random_element("the enemy is hesitant", "visable fear", "its frightened"))
 
 def exploit(ecode):
     clear_terminal()
