@@ -108,6 +108,7 @@ def change_variable(line_number, new_value):
         file.writelines(lines)
 
 def basicAttack():
+    clear_terminal()
     list = update()
     damage = (int(list[2]) * 2) + 5
     #attach tailsman
@@ -120,8 +121,17 @@ def basicAttack():
     DSTF(damage, "physical")
 
 def skill(ecode):
+    clear_terminal()
     list = update()
     print(list[5])
+    if '101' in list[5]:
+        print("101: turns an attached sigil into electricity dealing magic damage")
+    if '102' in list[5]:
+        print("102: creates 1-3 sigils")
+    if '103' in list[5]:
+        print("103: provides slight protection from physical and magic damage")
+    if '116' in list[5]:
+        print("116: turns an attached sigil into a hexing explosion that fears the enemy")
     #print(list[16])
     skill = input("Enter skill code: ")
     #skill list
